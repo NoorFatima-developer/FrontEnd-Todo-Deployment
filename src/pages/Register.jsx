@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from "axios";
+import { server } from '../main';
 
 function Register() {
 
@@ -12,7 +13,7 @@ function Register() {
         e.preventDefault()
         // add form data to database or API here
         console.log(name, email, password)
-        axios.post("https://backend-todo-deploy.vercel.app/api/v1/users/me")
+        axios.post(`${server}/users/new`)
 }
 
   return (
