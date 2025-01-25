@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from "axios";
 import { server } from '../main';
+import toast from "react-hot-toast"
 
 function Register() {
 
@@ -14,6 +15,8 @@ function Register() {
         // add form data to database or API here
         console.log(name, email, password)
         // mai front end mai backend sy data fetch krny klye fetch b use krskti thie or axios b , so meny axios use kea hai...
+
+       try {
         const {data} = await axios.post(`${server}/users/new`, {
             name,
             email,
@@ -25,6 +28,16 @@ function Register() {
             // ye must true krna hai otherwise cookie work nahi krygi...
             withCredentials: true
         })
+
+        // and must add toast in app.jsx..
+        // toast.success("Nice hogya...")
+
+        toast.success(data.message)
+       } catch (error) {
+        toast.error("Some error")
+        console.log(error);
+        
+       }
 }
 
   return (
