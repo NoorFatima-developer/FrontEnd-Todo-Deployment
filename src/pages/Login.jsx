@@ -12,7 +12,7 @@ function Login() {
             <h4>Or</h4>
             <Link to={"/register"}>Sign Up</Link>
         </form>
-      </section>
+      </section> 
     </div>
   )
 }
