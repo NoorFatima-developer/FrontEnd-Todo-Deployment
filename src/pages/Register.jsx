@@ -9,12 +9,12 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const submitHandler = (e) => {
+    const submitHandler = async(e) => {
         e.preventDefault()
         // add form data to database or API here
         console.log(name, email, password)
         // mai front end mai backend sy data fetch krny klye fetch b use krskti thie or axios b , so meny axios use kea hai...
-        axios.post(`${server}/users/new`, {
+        const {data} = await axios.post(`${server}/users/new`, {
             name,
             email,
             password
