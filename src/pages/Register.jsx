@@ -12,7 +12,7 @@ function Register() {
         e.preventDefault()
         // add form data to database or API here
         console.log(name, email, password)
-        axios.post()
+        axios.post("https://backend-todo-deploy.vercel.app/api/v1/users/me")
 }
 
   return (
