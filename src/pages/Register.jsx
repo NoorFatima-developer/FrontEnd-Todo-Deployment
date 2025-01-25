@@ -7,11 +7,12 @@ function Register() {
         <div className='login'>
       <section>
         <form>
+            <input type='text' placeholder='Name'>Name</input>
             <input type='text' placeholder='Email' />
             <input type='password' placeholder='Password' />
             <button type='submit'>Register</button>
             <h4>Or</h4>
-            <Link to={"/register"}>Sign In</Link>
+            <Link to={"/login"}>Sign In</Link>
         </form>
       </section> 
     </div>
