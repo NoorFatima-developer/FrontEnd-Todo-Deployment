@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from "axios";
 
 function Register() {
 
@@ -10,7 +11,8 @@ function Register() {
     const submitHandler = (e) => {
         e.preventDefault()
         // add form data to database or API here
-        console.log('Form submitted')
+        console.log(name, email, password)
+        axios.post()
 }
 
   return (
@@ -26,7 +28,7 @@ function Register() {
             required
             />
             <input 
-            type='text' 
+            type='email' 
             placeholder='Email'
             value={email} 
             onChange={(e)=> setEmail(e.target.value)}
