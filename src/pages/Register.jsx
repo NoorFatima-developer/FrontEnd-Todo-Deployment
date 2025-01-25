@@ -21,9 +21,24 @@ function Register() {
         <div className='login'>
       <section>
         <form onSubmit={submitHandler}>
-            <input type='text' placeholder='Name'/>
-            <input type='text' placeholder='Email' />
-            <input type='password' placeholder='Password' />
+            <input 
+            type='text' 
+            placeholder='Name' 
+            value={name} 
+            onChange={(e)=> setName(e.target.value)}
+            />
+            <input 
+            type='text' 
+            placeholder='Email'
+            value={email} 
+            onChange={(e)=> setEmail(e.target.value)}
+            />
+            <input 
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
+            />
             <button type='submit'>Register</button>
             <h4>Or</h4>
             <Link to={"/login"}>Sign In</Link>
@@ -35,3 +50,7 @@ function Register() {
 }
 
 export default Register
+
+
+// useState React ka ek hook hai jo functional components ko state manage karne ki facility deta hai.
+// State kisi variable ki value hoti hai jo time ke sath change ho sakti hai aur uska effect directly UI par dikhta hai.
