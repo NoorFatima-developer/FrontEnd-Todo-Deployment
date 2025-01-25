@@ -10,6 +10,7 @@ function Header() {
         <article>
             <Link to={"/"}>Home</Link>
             <Link to={"/profile"}>Profile</Link>
+            <Link to={"/login"}>Login</Link>
         </article>
     </nav>
   )
