@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes} from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes} from "react-router-dom";
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
         <Routes>
-          
+          <Route path="/" element={<Home/>} />
         </Routes>
     </Router>
   )
