@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 function Register() {
 
-
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -12,9 +11,7 @@ function Register() {
         e.preventDefault()
         // add form data to database or API here
         console.log('Form submitted')
-    }
-
-
+}
 
   return (
     <div>
