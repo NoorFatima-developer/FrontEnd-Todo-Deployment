@@ -13,6 +13,7 @@ function Register() {
         e.preventDefault()
         // add form data to database or API here
         console.log(name, email, password)
+        // mai front end mai backend sy data fetch krny klye fetch b use krskti thie or axios b , so meny axios use kea hai...
         axios.post(`${server}/users/new`, {
             name,
             email,
