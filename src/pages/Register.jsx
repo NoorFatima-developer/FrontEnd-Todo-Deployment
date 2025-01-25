@@ -13,7 +13,15 @@ function Register() {
         e.preventDefault()
         // add form data to database or API here
         console.log(name, email, password)
-        axios.post(`${server}/users/new`)
+        axios.post(`${server}/users/new`, {
+            name,
+            email,
+            password
+        },{
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
 }
 
   return (
