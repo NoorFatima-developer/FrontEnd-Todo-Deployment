@@ -20,7 +20,9 @@ function Register() {
         },{
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            // ye must true krna hai otherwise cookie work nahi krygi...
+            withCredentials: true
         })
 }
 
