@@ -11,24 +11,28 @@ import { Context, server } from "./main.jsx";
 
 function App() {
 
-  const {setUser, setisAuthenticated} = useContext(Context)
+  const { setUser, setisAuthenticated } = useContext(Context);
 
   useEffect(() => {
+    
     // Get my id:
     axios.get(`${server}/users/me`, {
       withCredentials: true,
     }).then(res=>{
+      console.log(res.data);
+      
       // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
       setUser(res.data.user);
-      setisAuthenticated(false);
+      setisAuthenticated(true);
+      
   })
   .catch((error) =>{
     // dono same hain jesy mrzi mai empty deskti hon:
     // setUser(null);
     setUser({});
-    setisAuthenticated(true);
+    setisAuthenticated(false);
   });
-  }, [])
+  }, [setUser, setisAuthenticated])
 
   return (
     <Router>
