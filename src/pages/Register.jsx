@@ -68,9 +68,9 @@ function Register() {
             onChange={(e)=> setPassword(e.target.value)}
             required
             />
-            <button type='submit'>Register</button>
+            <button type='submit'>Sign Up</button>
             <h4>Or</h4>
-            <Link to={"/login"}>Sign In</Link>
+            <Link to={"/login"}>Login In</Link>
         </form>
       </section> 
     </div>
