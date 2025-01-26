@@ -13,7 +13,7 @@ function Header() {
   // submitHandler logout klyr paste:
 
   const logoutHandler = async() => {
-
+   setloading(true);
    try {
         await axios.get(`${server}/users/logout`, 
         // ye must true krna hai otherwise cookie work nahi krygi...
@@ -26,11 +26,13 @@ function Header() {
     // toast.success("Nice hogya...")
     toast.success("Logout Successfully")
     setisAuthenticated(false);
-
+    setloading(false);
+    
    } catch (error) {
     toast.error(error.response?.data?.message || "Some error")
     console.log(error);
     setisAuthenticated(true);
+    setloading(false);
 }
 };
 
