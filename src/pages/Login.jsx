@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Login() {
+
+
+    if(isAuthenticated) return <Navigate to={"/"}/>;
+
   return (
     <div className='login'>
       <section>
