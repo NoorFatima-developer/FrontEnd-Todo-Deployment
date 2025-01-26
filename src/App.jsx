@@ -11,10 +11,11 @@ import { Context, server } from "./main.jsx";
 
 function App() {
 
-  const { setUser, setisAuthenticated } = useContext(Context);
+  const { setUser, setisAuthenticated, setloading } = useContext(Context);
 
   useEffect(() => {
     
+    setloading(true);
     // Get my id:
     axios.get(`${server}/users/me`, {
       withCredentials: true,
@@ -24,6 +25,7 @@ function App() {
       // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
       setUser(res.data.user);
       setisAuthenticated(true);
+      setloading(false);
       
   })
   .catch((error) =>{
@@ -31,6 +33,7 @@ function App() {
     // setUser(null);
     setUser({});
     setisAuthenticated(false);
+    setloading(false);
   });
   }, [setUser, setisAuthenticated])
 
