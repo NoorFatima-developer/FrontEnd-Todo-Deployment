@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 
 function Login() {
 
+    const {isAuthenticated, setisAuthenticated} = useContext(Context);
 
     if(isAuthenticated) return <Navigate to={"/"}/>;
 
