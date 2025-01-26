@@ -11,7 +11,7 @@ import { Context, server } from "./main.jsx";
 
 function App() {
 
-  const [user, setUser] = useContext(Context)
+  const [user, setUser, setisAuthenticated] = useContext(Context)
 
   useEffect(() => {
     // Get my id:
@@ -20,10 +20,12 @@ function App() {
     }).then(res=>{
       // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
       setUser(res.data.user);
+      setisAuthenticated(true);
   })
   .catch((error) =>{
     error(error.response.data.message || "Some error")
     setUser(null);
+    setisAuthenticated(false);
   });
   }, [])
 
