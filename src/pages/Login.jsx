@@ -42,7 +42,7 @@ function Login() {
   return (
     <div className='login'>
       <section>
-        <form onSubmit={SubmitHandler}>
+        <form onSubmit={submitHandler}>
         <input 
             type='email' 
             placeholder='Email'
