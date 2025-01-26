@@ -17,7 +17,6 @@ const AppWrapper = () => {
   return (
     
     <Context.Provider 
-
     // ab aghr meny authenticated ki value change krwani hai tu mai krwaskti hon by using setisAuthenticated:
     value={{
       isAuthenticated, 
@@ -31,6 +30,7 @@ const AppWrapper = () => {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    {/* aghr maidirectly contentProvider ko yahan dedeti or osk andr value tu update ni krskti thie ku k update tu useState sy honi this isluealeda sy oper fun banaya hai mai.. */}
     <AppWrapper/>
   </StrictMode>,
 )
