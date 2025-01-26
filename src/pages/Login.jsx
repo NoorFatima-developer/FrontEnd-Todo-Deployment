@@ -1,5 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
+import { Context } from '../main';
 
 function Login() {
 
@@ -10,7 +11,7 @@ function Login() {
     const submitHandler = async(e) => {
         e.preventDefault()
         // add form data to database or API here
-        console.log(name, email, password)
+        console.log(email, password)
         // mai front end mai backend sy data fetch krny klye fetch b use krskti thie or axios b , so meny axios use kea hai...
 
        try {
@@ -28,12 +29,12 @@ function Login() {
         // and must add toast in app.jsx..
         // toast.success("Nice hogya...")
         toast.success(data.message)
-        setisAuthenticated(false);
+        setisAuthenticated(true);
 
        } catch (error) {
         toast.error(error.response?.data?.message || "Some error")
         console.log(error);
-        setisAuthenticated(true);
+        setisAuthenticated(false);
     }
 };
 
