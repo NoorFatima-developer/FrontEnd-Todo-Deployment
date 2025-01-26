@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 function Header() {
+
+  // import context here:jo meny main.jsx mai banaya hai..
+
+  useContext(Context)
+
   return (
     <nav className='header'>
         <div>
