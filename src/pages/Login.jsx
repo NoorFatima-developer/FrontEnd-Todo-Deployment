@@ -8,10 +8,11 @@ function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const {isAuthenticated, setisAuthenticated} = useContext(Context);
+    const {isAuthenticated, setisAuthenticated, loading, setloading} = useContext(Context);
 
     const submitHandler = async(e) => {
         e.preventDefault()
+        setloading(true);
         // add form data to database or API here
         console.log(email, password)
         // mai front end mai backend sy data fetch krny klye fetch b use krskti thie or axios b , so meny axios use kea hai...
@@ -32,11 +33,13 @@ function Login() {
         // toast.success("Nice hogya...")
         toast.success(data.message)
         setisAuthenticated(true);
+        setloading(false);
 
        } catch (error) {
         toast.error(error.response.data.message || "Some error")
         console.log(error);
         setisAuthenticated(false);
+        setloading(false);
     }
 };
 
@@ -60,7 +63,7 @@ function Login() {
             onChange={(e)=> setPassword(e.target.value)}
             required
             />
-            <button type='submit'>Login</button>
+            <button type='submit' disabled={loading}>Login</button>
             <h4>Or</h4>
             <Link to={"/register"}>Sign Up</Link>
         </form>
