@@ -11,7 +11,7 @@ import { Context, server } from "./main.jsx";
 
 function App() {
 
-  const [user, setUser, setisAuthenticated] = useContext(Context)
+  const {setUser, setisAuthenticated} = useContext(Context)
 
   useEffect(() => {
     // Get my id:
@@ -22,9 +22,10 @@ function App() {
       setUser(res.data.user);
       setisAuthenticated(true);
   })
-  .catch((error) =>{
-    error(error.response.data.message || "Some error")
+  .catch(() =>{
+    // dono same hain jesy mrzi mai empty deskti hon:
     setUser(null);
+    setUser({});
     setisAuthenticated(false);
   });
   }, [])
