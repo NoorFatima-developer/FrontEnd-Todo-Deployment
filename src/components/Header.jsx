@@ -5,10 +5,8 @@ import { Context } from '../main';
 function Header() {
 
   // import context here:jo meny main.jsx mai banaya hai..
-
-  const data = useContext(Context);
-  console.log(data);
-  
+  const {isAuthenticated, setisAuthenticated} = useContext(Context);
+  console.log(isAuthenticated);
 
   return (
     <nav className='header'>
