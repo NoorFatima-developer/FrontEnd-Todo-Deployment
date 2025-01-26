@@ -33,11 +33,12 @@ function Register() {
         // and must add toast in app.jsx..
         // toast.success("Nice hogya...")
         toast.success(data.message)
+        setisAuthenticated(true);
 
        } catch (error) {
         toast.error(error.response?.data?.message || "Some error")
         console.log(error);
-        
+        setisAuthenticated(false);
     }
 }
 
