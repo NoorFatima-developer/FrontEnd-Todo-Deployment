@@ -15,7 +15,15 @@ const AppWrapper = () => {
   const [isAuthenticated, setisAuthenticated] = useState(false);
 
   return (
-    <Context.Provider value={{isAuthenticated: true}}>
+    
+    <Context.Provider 
+
+    // ab aghr meny authenticated ki value change krwani hai tu mai krwaskti hon by using setisAuthenticated:
+    value={{
+      isAuthenticated, 
+      setisAuthenticated
+      }}
+      >
       <App />
     </Context.Provider>
   )
