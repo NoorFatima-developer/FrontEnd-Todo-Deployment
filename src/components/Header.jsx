@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Context } from '../main';
+import { Context, server } from '../main';
+import toast from 'react-hot-toast';
 
 function Header() {
 
