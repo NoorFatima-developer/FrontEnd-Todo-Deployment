@@ -10,7 +10,7 @@ function Header() {
 
   // submitHandler logout klyr paste:
 
-  const submitHandler = async() => {
+  const logoutHandler = async() => {
 
    try {
     const {data} = await axios.get(`${server}/users/logout`, 
@@ -41,7 +41,7 @@ function Header() {
         <article>
             <Link to={"/"}>Home</Link>
             <Link to={"/profile"}>Profile</Link>
-            {isAuthenticated ? <button className='btn'>Logout</button>
+            {isAuthenticated ? <button onClick={logoutHandler} className='btn'>Logout</button>
              : <Link to={"/login"}>Login</Link>
             }
         </article>
