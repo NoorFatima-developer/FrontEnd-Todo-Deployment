@@ -27,7 +27,7 @@ function Header() {
     toast.success("Logout Successfully")
     setisAuthenticated(false);
     setloading(false);
-    
+
    } catch (error) {
     toast.error(error.response?.data?.message || "Some error")
     console.log(error);
@@ -45,7 +45,7 @@ function Header() {
         <article>
             <Link to={"/"}>Home</Link>
             <Link to={"/profile"}>Profile</Link>
-            {isAuthenticated ? <button onClick={logoutHandler} className='btn'>Logout</button>
+            {isAuthenticated ? <button onClick={logoutHandler} disabled={loading} className='btn'>Logout</button>
              : <Link to={"/login"}>Login</Link>
             }
         </article>
