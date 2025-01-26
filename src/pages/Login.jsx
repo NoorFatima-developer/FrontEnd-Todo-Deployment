@@ -5,6 +5,11 @@ function Login() {
 
     const {isAuthenticated, setisAuthenticated} = useContext(Context);
 
+    function Login() => {
+        
+    }
+
+
     if(isAuthenticated) return <Navigate to={"/"}/>;
 
   return (
