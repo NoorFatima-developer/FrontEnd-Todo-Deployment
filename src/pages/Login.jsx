@@ -3,11 +3,10 @@ import { Link, Navigate } from 'react-router-dom'
 
 function Login() {
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const {isAuthenticated, setisAuthenticated} = useContext(Context);
 
-    function Login() => {
-        
-    }
 
 
     if(isAuthenticated) return <Navigate to={"/"}/>;
@@ -15,9 +14,21 @@ function Login() {
   return (
     <div className='login'>
       <section>
-        <form>
-            <input type='text' placeholder='Email' />
-            <input type='password' placeholder='Password' />
+        <form onSubmit={SubmitHandler}>
+        <input 
+            type='email' 
+            placeholder='Email'
+            value={email} 
+            onChange={(e)=> setEmail(e.target.value)}
+            required
+            />
+            <input 
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={(e)=> setPassword(e.target.value)}
+            required
+            />
             <button type='submit'>Login</button>
             <h4>Or</h4>
             <Link to={"/register"}>Sign Up</Link>
