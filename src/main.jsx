@@ -8,7 +8,7 @@ import App from './App.jsx'
 // dena pry bs mjy variable ka nam e dena pry...
 
 export const server = "https://backend-todo-deploy.vercel.app/api/v1";
-const Context = createContext({isAuthenticated: false});
+export const Context = createContext({isAuthenticated: false});
 
 const AppWrapper = () => {
 
