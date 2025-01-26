@@ -6,13 +6,18 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
+import axios from "axios";
+import { server } from "./main.jsx";
 
 function App() {
 
   useEffect(() => {
-
+    // Get my id:
+    axios.get(`${server}/users/me`, {
+      withCredentials: true,
+    })
   }, [])
-  
+
   return (
     <Router>
       <Header/>
