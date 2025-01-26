@@ -5,9 +5,14 @@ import Profile from "./pages/Profile.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
 
 function App() {
 
+  useEffect(() => {
+
+  }, [])
+  
   return (
     <Router>
       <Header/>
