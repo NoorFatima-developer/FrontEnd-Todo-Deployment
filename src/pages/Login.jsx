@@ -7,7 +7,35 @@ function Login() {
     const [password, setPassword] = useState("");
     const {isAuthenticated, setisAuthenticated} = useContext(Context);
 
+    const submitHandler = async(e) => {
+        e.preventDefault()
+        // add form data to database or API here
+        console.log(name, email, password)
+        // mai front end mai backend sy data fetch krny klye fetch b use krskti thie or axios b , so meny axios use kea hai...
 
+       try {
+        const {data} = await axios.post(`${server}/users/login`, {
+            email,
+            password
+        },{
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // ye must true krna hai otherwise cookie work nahi krygi...
+            withCredentials: true
+        })
+
+        // and must add toast in app.jsx..
+        // toast.success("Nice hogya...")
+        toast.success(data.message)
+        setisAuthenticated(false);
+
+       } catch (error) {
+        toast.error(error.response?.data?.message || "Some error")
+        console.log(error);
+        setisAuthenticated(true);
+    }
+};
 
     if(isAuthenticated) return <Navigate to={"/"}/>;
 
