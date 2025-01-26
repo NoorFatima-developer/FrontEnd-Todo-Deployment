@@ -31,13 +31,13 @@ function Register() {
 
         // and must add toast in app.jsx..
         // toast.success("Nice hogya...")
-
         toast.success(data.message)
+        
        } catch (error) {
         toast.error("Some error")
         console.log(error);
         
-       }
+    }
 }
 
   return (
