@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Context, server } from '../main';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 function Header() {
 
@@ -14,7 +15,7 @@ function Header() {
   const logoutHandler = async() => {
 
    try {
-    const {data} = await axios.get(`${server}/users/logout`, 
+        await axios.get(`${server}/users/logout`, 
         // ye must true krna hai otherwise cookie work nahi krygi...
         {
           withCredentials: true
@@ -23,13 +24,13 @@ function Header() {
 
     // and must add toast in app.jsx..
     // toast.success("Nice hogya...")
-    toast.success(data.message)
-    setisAuthenticated(true);
+    toast.success("Logout Successfully")
+    setisAuthenticated(false);
 
    } catch (error) {
-    toast.error(error.response.data.message || "Some error")
+    toast.error(error.response?.data?.message || "Some error")
     console.log(error);
-    setisAuthenticated(false);
+    setisAuthenticated(true);
 }
 };
 
