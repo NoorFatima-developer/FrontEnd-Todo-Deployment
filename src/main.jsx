@@ -17,7 +17,6 @@ const AppWrapper = () => {
   const [user, setUser] = useState();
 
   return (
-    
     <Context.Provider 
     // ab aghr meny authenticated ki value change krwani hai tu mai krwaskti hon by using setisAuthenticated:
     value={{

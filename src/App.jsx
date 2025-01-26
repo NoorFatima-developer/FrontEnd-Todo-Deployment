@@ -5,19 +5,26 @@ import Profile from "./pages/Profile.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import { Toaster } from "react-hot-toast";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import axios from "axios";
-import { server } from "./main.jsx";
+import { Context, server } from "./main.jsx";
 
 function App() {
+
+  const [user, setUser] = useContext(Context)
 
   useEffect(() => {
     // Get my id:
     axios.get(`${server}/users/me`, {
       withCredentials: true,
     }).then(res=>{
-      res.data;
-    })
+      // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
+      setUser(res.data.user);
+  })
+  .catch((error) =>{
+    error(error.response.data.message || "Some error")
+    setUser(null);
+  });
   }, [])
 
   return (
