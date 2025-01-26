@@ -32,9 +32,9 @@ function Register() {
         // and must add toast in app.jsx..
         // toast.success("Nice hogya...")
         toast.success(data.message)
-        
+
        } catch (error) {
-        toast.error("Some error")
+        toast.error(error.response?.data?.message || "Some error")
         console.log(error);
         
     }
@@ -47,7 +47,7 @@ function Register() {
         <form onSubmit={submitHandler}>
             <input 
             type='text' 
-            placeholder='Name' 
+            placeholder='Name'  
             value={name} 
             onChange={(e)=> setName(e.target.value)}
             required
