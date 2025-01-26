@@ -13,16 +13,10 @@ function Header() {
   const submitHandler = async() => {
 
    try {
-    const {data} = await axios.get(`${server}/users/logout`, {
-        email,
-        password
-    },{
-        headers: {
-            'Content-Type': 'application/json'
-        },
+    const {data} = await axios.get(`${server}/users/logout`, 
         // ye must true krna hai otherwise cookie work nahi krygi...
         withCredentials: true
-    })
+    )
 
     // and must add toast in app.jsx..
     // toast.success("Nice hogya...")
