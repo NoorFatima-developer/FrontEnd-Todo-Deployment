@@ -20,13 +20,13 @@ function App() {
     }).then(res=>{
       // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
       setUser(res.data.user);
-      setisAuthenticated(true);
+      setisAuthenticated(false);
   })
-  .catch(() =>{
+  .catch((error) =>{
     // dono same hain jesy mrzi mai empty deskti hon:
-    setUser(null);
+    // setUser(null);
     setUser({});
-    setisAuthenticated(false);
+    setisAuthenticated(true);
   });
   }, [])
 
