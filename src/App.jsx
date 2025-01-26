@@ -15,7 +15,7 @@ function App() {
     // Get my id:
     axios.get(`${server}/users/me`, {
       withCredentials: true,
-    }).then(res=> {
+    }).then(res=>{
       res.data;
     })
   }, [])

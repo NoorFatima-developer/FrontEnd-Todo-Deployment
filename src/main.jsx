@@ -14,6 +14,7 @@ const AppWrapper = () => {
 
   const [isAuthenticated, setisAuthenticated] = useState(false);
   const [loading, setloading] = useState(false);
+  const [user, setUser] = useState();
 
   return (
     
@@ -24,6 +25,8 @@ const AppWrapper = () => {
       setisAuthenticated,
       loading, 
       setloading, 
+      user, 
+      setUser,
       }}
       >
       <App />
