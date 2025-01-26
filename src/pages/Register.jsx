@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import axios from "axios";
 import { Context, server } from '../main';
 import toast from "react-hot-toast"
@@ -40,7 +40,10 @@ function Register() {
         console.log(error);
         setisAuthenticated(false);
     }
-}
+};
+
+if(isAuthenticated)
+    return <Navigate to={"/"}/>;
 
   return (
     <div>
