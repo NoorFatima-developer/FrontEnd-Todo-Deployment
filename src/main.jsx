@@ -13,6 +13,7 @@ export const Context = createContext({isAuthenticated: false});
 const AppWrapper = () => {
 
   const [isAuthenticated, setisAuthenticated] = useState(false);
+  const [loading, setloading] = useState(false);
 
   return (
     
