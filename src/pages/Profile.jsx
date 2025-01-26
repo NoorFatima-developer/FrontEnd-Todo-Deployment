@@ -1,7 +1,10 @@
 import React from 'react'
 
 function Profile() {
-  return (
+
+  const {isAuthenticated, loading, user} = useContext(Context);
+
+  return (    
     <div>
       Profile
     </div>
