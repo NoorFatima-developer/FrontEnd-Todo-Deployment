@@ -15,7 +15,9 @@ function Header() {
    try {
     const {data} = await axios.get(`${server}/users/logout`, 
         // ye must true krna hai otherwise cookie work nahi krygi...
-        withCredentials: true
+        {
+          withCredentials: true
+        }
     )
 
     // and must add toast in app.jsx..
