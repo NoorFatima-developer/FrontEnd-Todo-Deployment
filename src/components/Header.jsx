@@ -7,7 +7,7 @@ import axios from 'axios';
 function Header() {
 
   // import context here:jo meny main.jsx mai banaya hai..
-  const {isAuthenticated, setisAuthenticated} = useContext(Context);
+  const {isAuthenticated, setisAuthenticated, loading, setloading} = useContext(Context);
   console.log(isAuthenticated);
 
   // submitHandler logout klyr paste:
