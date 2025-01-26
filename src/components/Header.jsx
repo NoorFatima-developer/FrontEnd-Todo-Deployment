@@ -16,8 +16,9 @@ function Header() {
         <article>
             <Link to={"/"}>Home</Link>
             <Link to={"/profile"}>Profile</Link>
-            <Link to={"/login"}>Login</Link>
-            <button className='btn'>Logout</button>
+            {isAuthenticated ? <button className='btn'>Logout</button>
+             : <Link to={"/login"}>Login</Link>
+            }
         </article>
     </nav>
   )
