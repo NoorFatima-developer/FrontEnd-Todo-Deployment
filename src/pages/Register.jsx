@@ -9,10 +9,11 @@ function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const {isAuthenticated, setisAuthenticated} = useContext(Context);
+    const {isAuthenticated, setisAuthenticated, loading, setloading} = useContext(Context);
 
     const submitHandler = async(e) => {
         e.preventDefault()
+        setloading(true);
         // add form data to database or API here
         console.log(name, email, password)
         // mai front end mai backend sy data fetch krny klye fetch b use krskti thie or axios b , so meny axios use kea hai...
@@ -34,11 +35,13 @@ function Register() {
         // toast.success("Nice hogya...")
         toast.success(data.message)
         setisAuthenticated(true);
+        setloading(false);
 
        } catch (error) {
         toast.error(error.response.data.message || "Some error")
         console.log(error);
         setisAuthenticated(false);
+        setloading(false);
     }
 };
 
@@ -71,7 +74,7 @@ if(isAuthenticated)
             onChange={(e)=> setPassword(e.target.value)}
             required
             />
-            <button type='submit'>Sign Up</button>
+            <button type='submit' disabled={loading}>Sign Up</button>
             <h4>Or</h4>
             <Link to={"/login"}>Login In</Link>
         </form>
