@@ -10,39 +10,45 @@ import axios from "axios";
 import { Context, server } from "./main.jsx";
 
 function App() {
+
   const { setUser, setisAuthenticated, setloading } = useContext(Context);
 
   useEffect(() => {
+    
     setloading(true);
-    axios
-      .get(`${server}/users/me`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        setUser(res.data.user);
-        setisAuthenticated(true);
-        setloading(false);
-      })
-      .catch((error) => {
-        setUser({});
-        setisAuthenticated(false);
-        setloading(false);
-      });
-  }, []);
+    // Get my id:
+    axios.get(`${server}/users/me`, {
+      withCredentials: true,
+    }).then(res=>{
+      console.log(res.data.user);
+      
+      // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
+      setUser(res.data.user);
+      setisAuthenticated(true);
+      setloading(false);
+      
+  })
+  .catch((error) =>{
+    // dono same hain jesy mrzi mai empty deskti hon:
+    // setUser(null);
+    setUser({});
+    setisAuthenticated(false);
+    setloading(false);
+  });
+  }, [setUser, setisAuthenticated])
 
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-      </Routes>
-      <Toaster />
+      <Header/>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
+        </Routes>
+        <Toaster/>
     </Router>
-  );
+  )
 }
-
 
 export default App
