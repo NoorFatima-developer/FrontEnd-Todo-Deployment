@@ -35,7 +35,7 @@ function App() {
     setisAuthenticated(false);
     setloading(false);
   });
-  }, [setUser, setisAuthenticated])
+  }, [])
 
   return (
     <Router>
