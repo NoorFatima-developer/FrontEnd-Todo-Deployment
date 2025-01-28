@@ -5,8 +5,8 @@ const TodoItem = ({title, description}) => {
     <div className='todo'>
       
       <div>
-        <h4></h4>
-        <p></p>
+        <h4>{title}</h4>
+        <p>{description}</p>
       </div>
       <div></div>
     </div>
