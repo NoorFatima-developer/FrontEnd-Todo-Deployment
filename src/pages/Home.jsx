@@ -8,10 +8,12 @@ export default function Home() {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
+  const [loading, setloading] = useState(false);
 
   const submitHandler = async() => {
+  
     try {
+      setloading(true);
       const {data} = await axios.post(`${server} ,/tasks/new`,
         { 
           title, 
@@ -24,10 +26,11 @@ export default function Home() {
           }  
         }
       );
-
       toast.success(data.message);
+      setloading(false);
     } catch (error) {
       toast.error(error.reponse.data.message);
+      setloading(false);
     }
   }
 
