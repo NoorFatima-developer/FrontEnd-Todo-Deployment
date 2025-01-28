@@ -12,13 +12,14 @@ export default function Home() {
   const [loading, setloading] = useState(false);
   const [tasks, setTasks] = useState([]);
 
-  const updateHandler = (id) => {
+  const updateHandler = async(id) => {
     try {
-      
+      // id basically ye essy hai tasks/6792caffa683a9151dcd3166...lkin oper sy milri hai islye bs id pass krdaingy..
+      await axios.put(`${server}/tasks/id`)
     } catch (error) {
       
     }
-    
+
     toast.success(id)
   }
 
