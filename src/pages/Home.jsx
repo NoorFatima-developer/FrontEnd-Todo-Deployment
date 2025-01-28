@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { server } from '../main';
+import toast from 'react-hot-toast';
 
 
 export default function Home() {
@@ -22,9 +23,11 @@ export default function Home() {
             'Content-Type': 'application/json'
           }  
         }
-      )
+      );
+
+      toast.success(data.message);
     } catch (error) {
-      
+      toast.error(error.reponse.data.message);
     }
   }
 
