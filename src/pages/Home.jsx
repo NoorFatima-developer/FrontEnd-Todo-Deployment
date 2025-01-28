@@ -97,6 +97,8 @@ export default function Home() {
           isCompleted={i.isCompleted}
           updateHandler={updateHandler}
           deleteHandler={deleteHandler}
+          id={i._id}
+          key={i._id}
           />
 ))}
 

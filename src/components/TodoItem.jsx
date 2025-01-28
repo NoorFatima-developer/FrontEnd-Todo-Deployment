@@ -1,6 +1,7 @@
 import React from 'react'
 
-const TodoItem = ({title, description, isCompleted, updateHandler, deleteHandler}) => {
+// pass by using props...
+const TodoItem = ({title, description, isCompleted, updateHandler, deleteHandler, id}) => {
   return (
     <div className='todo'>
       <div>
@@ -9,8 +10,9 @@ const TodoItem = ({title, description, isCompleted, updateHandler, deleteHandler
       </div>
 
       <div>
-        <input onClick={updateHandler} type='checkbox' checked={isCompleted} />
-        <button onClick={deleteHandler} className='btn'>Delete</button>
+        {/* jb kisi id ko msg k sath print krwana ho tb callback ka use krty hain or iska func home.jsx mai hai */}
+        <input onClick={()=>updateHandler(id)} type='checkbox' checked={isCompleted} />
+        <button onClick={()=>deleteHandler(id)} className='btn'>Delete</button>
       </div>
     </div>
   )
