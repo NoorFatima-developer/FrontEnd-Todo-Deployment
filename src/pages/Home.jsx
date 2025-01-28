@@ -11,6 +11,8 @@
     const [description, setDescription] = useState("");
     const [loading, setloading] = useState(false);
     const [tasks, setTasks] = useState([]);
+    // refresh ek toggle flag hai jo ensure karta hai ke component ka state update
+    //  hone ke baad API call dubara chale aur naye tasks ko UI me reflect kare. Without refresh, aapke tasks ka update live UI me dikhayi nahi dega.
     const [refresh, setRefresh] = useState(false)
 
     const updateHandler = async(id) => {
