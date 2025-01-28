@@ -10,7 +10,8 @@ const TodoItem = ({title, description, isCompleted, updateHandler, deleteHandler
       </div>
 
       <div>
-        {/* jb kisi id ko msg k sath print krwana ho tb callback ka use krty hain or iska func home.jsx mai hai */}
+{/* aghr mai yahan function bana deti tu yahan pr mai direct function hi pass krna tha id deny ki zrort ni thie..lkn
+meny ab function e home.jsx mai dea hai tu isleye yahan as a props pass horha hai tu m phr ab id dogi.. */}
         <input onClick={()=>updateHandler(id)} type='checkbox' checked={isCompleted} />
         <button onClick={()=>deleteHandler(id)} className='btn'>Delete</button>
       </div>
