@@ -13,11 +13,11 @@ export default function Home() {
   const [tasks, setTasks] = useState([]);
 
   const updateHandler = (id) => {
-
+    toast.success(id)
   }
 
   const deleteHandler = (id) => {
-
+    toast.error(id)
   }
 
   const submitHandler = async(e) => {
@@ -91,10 +91,16 @@ export default function Home() {
        <section className='todosContainer'>
         {tasks.map((i)=>(
           // <div key={i._id}>{i.title}</div>
-          <TodoItem title={i.title} description={i.description} isCompleted={i.isCompleted}/>
+          <TodoItem 
+          title={i.title} 
+          description={i.description} 
+          isCompleted={i.isCompleted}
+          updateHandler={updateHandler}
+          deleteHandler={deleteHandler}
+          />
 ))}
 
-    </section> 
+        </section> 
 
     </div>
   )
