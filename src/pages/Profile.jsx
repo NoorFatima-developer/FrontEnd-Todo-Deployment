@@ -5,7 +5,7 @@ import Loader from '../components/Loader';
 const Profile = () => {
   const { isAuthenticated, loading, user } = useContext(Context);
       //not getting user data...
-      // console.log(user);
+      console.log(user);
    return(
      loading ? <Loader/> :(
     <div>
