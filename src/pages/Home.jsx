@@ -44,7 +44,7 @@ export default function Home() {
     withCredentials: true,
   })
   .then(res => {
-    console.log(res.data.tasks);
+    // console.log(res.data.tasks);
     setTasks(res.data.tasks);
   })
   .catch((e)=>{
@@ -77,6 +77,13 @@ export default function Home() {
         </form>
        </section>
        </div>
+
+       <section className='todosContainer'>
+        {tasks.map((i)=>(
+          <div key={i._id}>{i.title}</div>
+        ))}
+       </section> 
+       
     </div>
   )
 }
