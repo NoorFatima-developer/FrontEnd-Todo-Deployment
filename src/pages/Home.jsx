@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { useState } from 'react'
+import { server } from '../main';
 
 
 export default function Home() {
@@ -7,8 +9,12 @@ export default function Home() {
   const [description, setDescription] = useState("");
 
 
-  const submitHandler = (e) => {
-
+  const submitHandler = async() => {
+    try {
+      const {data} = await axios.post(`${server}`,/tasks/new)
+    } catch (error) {
+      
+    }
   }
 
   return (
