@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { server } from '../main';
 import toast from 'react-hot-toast';
+import TodoItem from '../components/TodoItem';
 
 
 export default function Home() {
@@ -81,7 +82,8 @@ export default function Home() {
 {/* map() ek JavaScript method hai jo array ke har ek element ko loop kar ke transform karta hai aur ek naya array return karta hai. */}
        <section className='todosContainer'>
         {tasks.map((i)=>(
-          <div key={i._id}>{i.title}</div>
+          // <div key={i._id}>{i.title}</div>
+          <TodoItem/>
         ))}
        </section> 
 
