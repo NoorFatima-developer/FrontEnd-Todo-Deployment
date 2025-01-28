@@ -25,13 +25,13 @@ function Header() {
     // and must add toast in app.jsx..
     // toast.success("Nice hogya...")
     toast.success("Logout Successfully")
-    setisAuthenticated(false);
+    setisAuthenticated(true);
     setloading(false);
 
    } catch (error) {
     toast.error(error.response?.data?.message || "Some error")
     console.log(error);
-    setisAuthenticated(true);
+    setisAuthenticated(false);
     setloading(false);
 }
 };

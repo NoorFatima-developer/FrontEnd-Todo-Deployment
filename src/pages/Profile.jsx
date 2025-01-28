@@ -8,8 +8,6 @@ const Profile = () => {
       //not getting user data...
       console.log(user);
 
-
-    if(!isAuthenticated) return <Navigate to={"/"}/>;
    return(
      loading ? <Loader/> :(
     <div>

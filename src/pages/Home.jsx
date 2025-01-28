@@ -98,7 +98,7 @@ import { Navigate } from 'react-router-dom';
   }, [refresh]);
 
 
-  if(!isAuthenticated) return <Navigate to={"/"}/>;
+  if(!isAuthenticated) return <Navigate to={"/login"}/>;
 
     return (
       <div className='container'>
