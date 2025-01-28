@@ -83,7 +83,7 @@ export default function Home() {
        <section className='todosContainer'>
         {tasks.map((i)=>(
           // <div key={i._id}>{i.title}</div>
-          <TodoItem/>
+          <TodoItem title={i.title} description={i.description}/>
         ))}
        </section> 
 
