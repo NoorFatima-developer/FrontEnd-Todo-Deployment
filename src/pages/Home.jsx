@@ -3,6 +3,7 @@
   import { Context, server } from '../main';
   import toast from 'react-hot-toast';
   import TodoItem from '../components/TodoItem';
+import { Navigate } from 'react-router-dom';
 
 
   export default function Home() {
@@ -95,6 +96,9 @@
       toast.error(e.response?.data?.message || "Something went wrong");
     })
   }, [refresh]);
+
+
+  if(!isAuthenticated) return <Navigate to={"/"}/>;
 
     return (
       <div className='container'>
