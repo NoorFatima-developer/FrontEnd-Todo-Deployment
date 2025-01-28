@@ -9,6 +9,7 @@ export default function Home() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setloading] = useState(false);
+  const [tasks, setTasks] = useState([]);
 
   const submitHandler = async(e) => {
   e.preventDefault();
