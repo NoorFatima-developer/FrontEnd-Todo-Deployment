@@ -19,7 +19,9 @@ export default function Home() {
             onChange={(e)=> setPassword(e.target.value)}
             required
             />
-            <button type='submit'>Add Task</button>
+            <button type='submit'>
+              Add Task
+            </button>
         </form>
        </section>
     </div>
