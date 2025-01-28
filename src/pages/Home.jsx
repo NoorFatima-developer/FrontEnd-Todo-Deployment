@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 export default function Home() {
 
   const [title, setTitle] = useState("");
@@ -7,12 +8,13 @@ export default function Home() {
 
 
   const submitHandler = (e) => {
-    
+
   }
 
   return (
     <div className='container'>
-       <section className='todosContainer'>
+       <div className='login'>
+       <section>
        <form onSubmit={submitHandler}>
         <input 
             type='text' 
@@ -33,6 +35,7 @@ export default function Home() {
             </button>
         </form>
        </section>
+       </div>
     </div>
   )
 }
