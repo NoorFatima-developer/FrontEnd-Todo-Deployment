@@ -28,7 +28,7 @@ export default function Home() {
       // update tasks array by filter out the task that has been updated.
       setTasks(tasks.filter(task => task._id!== id));
     } catch (error) {
-      
+      toast.error(error.reponse?.data?.message || "Something went wrong");
     }
 
     toast.success(id)
