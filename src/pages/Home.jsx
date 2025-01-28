@@ -15,14 +15,18 @@ export default function Home() {
   const updateHandler = async(id) => {
     try {
       // id basically ye essy hai tasks/6792caffa683a9151dcd3166...lkin oper sy milri hai islye bs id pass krdaingy..
-      await axios.put(`${server}/tasks/id`,
+      const {data} = await axios.put(`${server}/tasks/id`,
 
         // data mai kich ni dena empty obj dena hai bs..
         {},
         {
           withCredentials: true, 
         }
-      )
+      );
+
+      toast.success(data.message);
+      // update tasks array by filter out the task that has been updated.
+      setTasks(tasks.filter(task => task._id!== id));
     } catch (error) {
       
     }
