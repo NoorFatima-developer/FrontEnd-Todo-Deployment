@@ -13,10 +13,22 @@ export default function Home() {
   const [tasks, setTasks] = useState([]);
 
   const updateHandler = (id) => {
+    try {
+      
+    } catch (error) {
+      
+    }
+    
     toast.success(id)
   }
 
   const deleteHandler = (id) => {
+    try {
+      
+    } catch (error) {
+      
+    }
+
     toast.error(id)
   }
 
