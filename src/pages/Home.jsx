@@ -45,6 +45,7 @@ export default function Home() {
   })
   .then(res => {
     console.log(res.data.tasks);
+    setTasks(res.data.tasks);
   })
   .catch((e)=>{
     toast.error(e.response?.data?.message || "Something went wrong");
