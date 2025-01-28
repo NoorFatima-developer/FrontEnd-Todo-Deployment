@@ -53,7 +53,7 @@ export default function Home() {
             onChange={(e)=> setDescription(e.target.value)}
             required
             />
-            <button type='submit'>
+            <button type='submit' disabled={loading}>
               Add Task
             </button>
         </form>
