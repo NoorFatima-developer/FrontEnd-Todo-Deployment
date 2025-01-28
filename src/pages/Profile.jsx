@@ -4,9 +4,10 @@ import { Context } from '../main';
 const Profile = () => {
   const { isAuthenticated, loading, user } = useContext(Context);
 
-
-    <div>
+      console.log(user);
     
+    <div>
+      
     </div>
  
 };
