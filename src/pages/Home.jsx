@@ -41,8 +41,12 @@ export default function Home() {
   useEffect(()=> {
     axios.get(`${server}/tasks/my`,{
     withCredentials: true,
-  }).then(res => {
+  })
+  .then(res => {
     console.log(res.data);
+  })
+  .catch((e)=>{
+    toast.error(e.response?.data?.message || "Something went wrong");
   })
 }, []);
 
