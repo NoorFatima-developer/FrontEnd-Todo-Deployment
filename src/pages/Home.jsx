@@ -30,16 +30,23 @@ export default function Home() {
     } catch (error) {
       toast.error(error.reponse?.data?.message || "Something went wrong");
     }
-
     toast.success(id)
   }
 
   const deleteHandler = (id) => {
     try {
-      
+      // id basically ye essy hai tasks/6792caffa683a9151dcd3166...lkin oper sy milri hai islye bs id pass krdaingy..
+      const {data} = await axios.delete(`${server}/tasks/id`, {
+          withCredentials: true, 
+        }
+      );
+
+      toast.success(data.message);
     } catch (error) {
-      
+      toast.error(error.reponse?.data?.message || "Something went wrong");
     }
+    toast.success(id)
+  }
 
     toast.error(id)
   }
