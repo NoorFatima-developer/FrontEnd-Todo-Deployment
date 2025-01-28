@@ -24,8 +24,6 @@ function App() {
       // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
       setUser(res.data.user);
       setisAuthenticated(true);
-    
-
       setloading(false);
   })
   .catch((error) =>{

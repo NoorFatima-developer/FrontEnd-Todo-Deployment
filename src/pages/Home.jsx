@@ -39,11 +39,11 @@ export default function Home() {
   };
 
   useEffect(()=> {
-    axios.get(`${server}/tasks/my`,{
+    axios.get(`${server}/tasks/me`,{
     withCredentials: true,
   })
   .then(res => {
-    console.log(res.data);
+    console.log(res.data.tasks);
   })
   .catch((e)=>{
     toast.error(e.response?.data?.message || "Something went wrong");
