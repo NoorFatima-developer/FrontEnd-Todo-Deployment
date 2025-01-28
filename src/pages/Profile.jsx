@@ -4,7 +4,9 @@ import { Context } from '../main';
 const Profile = () => {
   const { isAuthenticated, loading, user } = useContext(Context);
 
-      console.log(user);
+
+      //not getting user data...
+      // console.log(user);
     
     <div>
       <h1>{user?.name}</h1>
