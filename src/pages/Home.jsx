@@ -12,15 +12,15 @@ export default function Home() {
         <input 
             type='text' 
             placeholder='Title'
-            value={email} 
-            onChange={(e)=> setEmail(e.target.value)}
+            value={title} 
+            onChange={(e)=> setTitle(e.target.value)}
             required
             />
             <input 
             type='text'
             placeholder='Description'
-            value={password}
-            onChange={(e)=> setPassword(e.target.value)}
+            value={description}
+            onChange={(e)=> setDescription(e.target.value)}
             required
             />
             <button type='submit'>
