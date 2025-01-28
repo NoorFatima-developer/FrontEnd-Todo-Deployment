@@ -85,6 +85,7 @@ import { Navigate } from 'react-router-dom';
 
 
     useEffect(()=> {
+      if(isAuthenticated)
       axios.get(`${server}/tasks/me`,{
       withCredentials: true,
     })
@@ -95,7 +96,7 @@ import { Navigate } from 'react-router-dom';
     .catch((e)=>{
       toast.error(e.response?.data?.message || "Something went wrong");
     })
-  }, [refresh]);
+  }, [isAuthenticated, refresh]);
 
 
   if(!isAuthenticated) return <Navigate to={"/login"}/>;

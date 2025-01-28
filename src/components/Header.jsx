@@ -25,13 +25,13 @@ function Header() {
     // and must add toast in app.jsx..
     // toast.success("Nice hogya...")
     toast.success("Logout Successfully")
-    setisAuthenticated(true);
+    setisAuthenticated(false);
     setloading(false);
 
    } catch (error) {
     toast.error(error.response?.data?.message || "Some error")
     console.log(error);
-    setisAuthenticated(false);
+    setisAuthenticated(true);
     setloading(false);
 }
 };
@@ -43,7 +43,7 @@ function Header() {
             <h2>Learn Backend</h2>
         </div>
         <article>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/home"}>Home</Link>
             <Link to={"/profile"}>Profile</Link>
             {isAuthenticated ? <button onClick={logoutHandler} disabled={loading} className='btn'>Logout</button>
              : <Link to={"/login"}>Login</Link>
