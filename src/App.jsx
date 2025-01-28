@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes} from "react-router-dom";
+import { Navigate, Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx"
 import Header from "./components/Header.jsx";
 import Profile from "./pages/Profile.jsx";
@@ -39,7 +39,7 @@ function App() {
     <Router>
       <Header/>
         <Routes>
-        <Route path="/" element={<Login/>} />
+        <Route path="/" element={<Navigate to="/login" />}/>
           <Route path="/home" element={<Home/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/login" element={<Login/>} />
