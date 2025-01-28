@@ -5,6 +5,11 @@ export default function Home() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+
+  const submitHandler = (e) => {
+    
+  }
+
   return (
     <div className='container'>
        <section className='todosContainer'>
