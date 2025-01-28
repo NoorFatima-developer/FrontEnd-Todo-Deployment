@@ -11,7 +11,9 @@ export default function Home() {
 
   const submitHandler = async() => {
     try {
-      const {data} = await axios.post(`${server}`,/tasks/new)
+      const {data} = await axios.post(`${server} ,/tasks/new`,
+        { title, description }
+      )
     } catch (error) {
       
     }
