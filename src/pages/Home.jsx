@@ -1,6 +1,6 @@
   import axios from 'axios';
-  import React, { useEffect, useState } from 'react'
-  import { server } from '../main';
+  import React, { useContext, useEffect, useState } from 'react'
+  import { Context, server } from '../main';
   import toast from 'react-hot-toast';
   import TodoItem from '../components/TodoItem';
 
@@ -14,6 +14,7 @@
     // refresh ek toggle flag hai jo ensure karta hai ke component ka state update
     //  hone ke baad API call dubara chale aur naye tasks ko UI me reflect kare. Without refresh, aapke tasks ka update live UI me dikhayi nahi dega.
     const [refresh, setRefresh] = useState(false)
+    const {isAuthenticated} = useContext(Context)
 
     const updateHandler = async(id) => {
       try {
