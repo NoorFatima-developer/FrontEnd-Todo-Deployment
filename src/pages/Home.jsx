@@ -12,6 +12,14 @@ export default function Home() {
   const [loading, setloading] = useState(false);
   const [tasks, setTasks] = useState([]);
 
+  const updateHandler = (id) => {
+
+  }
+
+  const deleteHandler = (id) => {
+
+  }
+
   const submitHandler = async(e) => {
   e.preventDefault();
     try {

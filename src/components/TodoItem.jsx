@@ -9,7 +9,7 @@ const TodoItem = ({title, description, isCompleted}) => {
       </div>
 
       <div>
-        <input type='checkbox' />
+        <input type='checkbox' checked={isCompleted} />
         <button className='btn'>Delete</button>
       </div>
     </div>
