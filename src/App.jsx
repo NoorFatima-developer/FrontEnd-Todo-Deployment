@@ -11,10 +11,9 @@ import { Context, server } from "./main.jsx";
 
 function App() {
 
-  const { setUser, setisAuthenticated, setloading, setToken } = useContext(Context);
+  const { setUser, setisAuthenticated,setloading } = useContext(Context);
 
   useEffect(() => {
-    
     setloading(true);
     // Get my id:
     axios.get(`${server}/users/me`, {
