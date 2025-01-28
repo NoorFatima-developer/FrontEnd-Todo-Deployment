@@ -11,7 +11,7 @@ import { Context, server } from "./main.jsx";
 
 function App() {
 
-  const { setUser, setisAuthenticated, setloading, setToken } = useContext(Context);
+  const { setUser, setisAuthenticated, setloading} = useContext(Context);
 
   useEffect(() => {
     setloading(true);
@@ -19,9 +19,8 @@ function App() {
     axios.get(`${server}/users/me`, {
       withCredentials: true,
     }).then(res=>{
-      console.log(res.data);
+      console.log(res.data.user);
 
-      
       // and yahan pr jo user ki information hai osko hum save krny klye createcontext kea hai oska b main.jsx mai:
       setUser(res.data.user);
       setisAuthenticated(true);
