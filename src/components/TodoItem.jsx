@@ -1,13 +1,17 @@
 import React from 'react'
 
-const TodoItem = ({title, description}) => {
+const TodoItem = ({title, description, isCompleted}) => {
   return (
     <div className='todo'>
       <div>
         <h4>{title}</h4>
         <p>{description}</p>
       </div>
-      <div></div>
+
+      <div>
+        <input type='checkbox' />
+        <button className='btn'>Delete</button>
+      </div>
     </div>
   )
 }

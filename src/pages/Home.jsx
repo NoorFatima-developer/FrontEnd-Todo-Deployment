@@ -84,8 +84,9 @@ export default function Home() {
         {tasks.map((i)=>(
           // <div key={i._id}>{i.title}</div>
           <TodoItem title={i.title} description={i.description} isCompleted={i.isCompleted}/>
-        ))}
-       </section> 
+))}
+
+    </section> 
 
     </div>
   )
