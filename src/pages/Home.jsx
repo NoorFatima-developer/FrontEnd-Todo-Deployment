@@ -19,9 +19,7 @@ export default function Home() {
             onChange={(e)=> setPassword(e.target.value)}
             required
             />
-            <button type='submit' disabled={loading}>Login</button>
-            <h4>Or</h4>
-            <Link to={"/register"}>Sign Up</Link>
+            <button type='submit'>Add Task</button>
         </form>
        </section>
     </div>
