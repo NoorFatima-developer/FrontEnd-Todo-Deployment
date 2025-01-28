@@ -78,12 +78,13 @@ export default function Home() {
        </section>
        </div>
 
+{/* map() ek JavaScript method hai jo array ke har ek element ko loop kar ke transform karta hai aur ek naya array return karta hai. */}
        <section className='todosContainer'>
         {tasks.map((i)=>(
           <div key={i._id}>{i.title}</div>
         ))}
        </section> 
-       
+
     </div>
   )
 }
